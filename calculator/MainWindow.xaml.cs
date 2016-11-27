@@ -154,9 +154,12 @@ namespace calculator
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
             calc.SecondOperand = textBoxInput.Text;
-            calc.CalculateResult();
-            textBoxOutput.Text = calc.FirstOperand + calc.Operation + calc.SecondOperand + "=" + calc.Result;
-            textBoxInput.Clear();
+            if (!string.IsNullOrEmpty(calc.FirstOperand)&& !string.IsNullOrEmpty(calc.SecondOperand) && !string.IsNullOrEmpty(calc.Operation))
+            {
+                calc.CalculateResult();
+                textBoxOutput.Text = calc.FirstOperand + calc.Operation + calc.SecondOperand + "=" + calc.Result;
+                textBoxInput.Clear();
+            }
         }
     }
 }

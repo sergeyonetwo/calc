@@ -96,7 +96,7 @@ namespace calculator
             catch (Exception)
             {
                 result = "Invalid number:" + firstOperand;
-                throw;
+                throw new Exception("Wrong input");
             }
         }
 
